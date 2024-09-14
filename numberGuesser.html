@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guesser</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: #0C242F;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .main {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
+        #userInput {
+            width: 300px;
+            border-radius: 5px;
+        }
+        #hint {
+            color: white;
+        }
+        .buttonContainer {
+            display: flex;
+            justify-content: end;
+            width: 300px;
+            margin-top: 10px;
+        }
+    </style>
+    <main class="main">
+        <p id="hint" class=""></p>
+        <input id="userInput" type="text" placeholder="Guess the winning number between 1-100">
+        <div class="buttonContainer"><button id="submitButton" type="button">Submit</button></div>
+    </main>
+    <script src="/src/numberGuesser.js"></script>
+</body>
+</html>
