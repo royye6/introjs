@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: #0C242F;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 150px;
+        }
+        span {
+            font-size: 40px;
+            color: white;
+        }
+        button {
+            width: 60px;
+            height: 50px;
+            font-size: 10;
+            border-radius: 15px;
+
+        }
+        .container {
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            padding: 5px;
+        }
+        .buttonContainer {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+    <main class="main">
+        <div class="container">
+            <span id="currentNumber">0</span>
+            <div class="buttonContainer">
+                <button id="decrementButton" type="button">-</button>
+                <button id="resetButton" type="button">RESET</button>
+                <button id="incrementButton" type="button">+</button>
+            </div>
+        </div>
+    </main>
+    <script src="/src/counter.js"></script>
+</body>
+</html>
