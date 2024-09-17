@@ -1,64 +1,56 @@
-// Assign DOM elements to variables
+// Execute function when the user clicks on the submit button
+generateButton.onclick = function generatePassword() {
 
-let generatedPassword = document.getElementById('generatedPassword');
-const passwordLength = document.getElementById('passwordLength').value;
-const includeNumbers = document.getElementById('includeNumbers').value;
-const includeUppercase = document.getElementById('includeUppercase').value;
-const includeLowercase = document.getElementById('includeLowercase').value;
-const includeSymbols = document.getElementById('includeLowercase').value;
-const generateButton = document.getElementById('generateButton')
+    // Assign DOM elements to variables
+    let generatedPassword = document.getElementById('generatedPassword');
+    const passwordLengthInput = document.getElementById('passwordLength');
+    const passwordLength = passwordLengthInput.value
+    const includeNumbers = document.getElementById('includeNumbers');
+    const includeUppercase = document.getElementById('includeUppercase');
+    const includeLowercase = document.getElementById('includeLowercase');
+    const includeSymbols = document.getElementById('includeSymbols');
 
-generateButton.onclick = function generatePassword(passwordLength, includeNumbers,
-                                                    includeUppercase, includeLowercase,
-                                                    includeSymbols
-) {
-    // Store numbers, symbols, uppercase and lowercase letters as arrays
-    const numbers = ['1','2','3','4','5','6','7','8','9'];
-    const uppercase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-    const lowercase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-    const symbols = ['!','@','#','$','%','&','*'];
-    const concatenatedArray = []
+    let numbers = [];
+    let uppercase = [];
+    let lowercase = [];
+    let symbols = [];
     
+    // Conditionally append elements to concatenatedArray based on user input
+    if(includeNumbers.checked) {
+        numbers.push('1','2','3','4','5','6','7','8','9');
+    }
+    if(includeUppercase.checked) {
+        uppercase.push('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
+    }
+    if(includeSymbols.checked) {
+        symbols.push('!','@','#','$','%','&','*');
+    }
+    if(includeLowercase.checked) {
+        lowercase.push('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');
+    }
+    
+    let concatenatedArray = []
+
     concatenatedArray.push(...numbers, ...uppercase, ...lowercase, ...symbols)
     let concatenatedArrayLength = concatenatedArray.length
     
+    // For debugging
     console.log(concatenatedArray)
     
+    // Append a random character from concatenatedArray to the passwordArray based on character index with each iteration
     const passwordArray = []
-    for(let i = 0; i < 20; i++) {
+    for(let i = 0; i < passwordLength; i++) {
         j = Math.floor(Math.random() * concatenatedArrayLength) * 1;
         randomChar = concatenatedArray[j]
         passwordArray.push(randomChar)
     }
         
     const password = passwordArray.join('')
+
+    // For debugging
     console.log(password)
+
+    // Update readonly-input element value with generated password
+    generatedPassword.value = password
 }
-
-// // Execute function when the user clicks on the submit button
-// generateButton.onclick = function generatePassword() {
-//     // Store numbers, symbols, uppercase and lowercase letters as arrays
-//     const numbers = ['1','2','3','4','5','6','7','8','9'];
-//     const uppercase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-//     const lowercase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-//     const concatenatedArray = []
-    
-//     concatenatedArray.push(...numbers, ...uppercase, ...lowercase)
-//     let concatenatedArrayLength = concatenatedArray.length
-    
-//     console.log(concatenatedArray)
-    
-//     const passwordArray = []
-//     for(let i = 0; i < 20; i++) {
-//         j = Math.floor(Math.random() * concatenatedArrayLength) * 1;
-//         randomChar = concatenatedArray[j]
-//         passwordArray.push(randomChar)
-//     }
-        
-//     const password = passwordArray.join('')
-//     console.log(password)
-
-// }
-
-
 
