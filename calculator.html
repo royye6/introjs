@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #0C242F;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .main {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 150px;
+        }
+        .calculatorContainer {
+            background-color: whitesmoke;
+            display: flex;
+            flex-direction: column;
+            width: 350px;
+            height: 600px;
+            border-radius: 8px;
+            overflow: hidden;
+            padding-bottom: 10px;
+        }
+        .screen {
+            display: flex;
+            flex-direction: column;
+            height: 30%;
+            width: 100%;
+            justify-content: end;
+            text-align: right;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .display {
+            padding-right: 17px;
+        }
+        .result {
+            font-size: 70px;
+            padding-right: 15px;
+        }
+        .operationsContainer {
+            display: flex;
+            flex-direction: column;
+            height: 70%;
+            width: 100%;
+        }
+        .buttonsContainer {
+            display: flex;
+            height: 20%;
+            width: 100%;
+            background-color: whitesmoke;
+            justify-content: space-evenly;
+            padding-top: 5px;
+            align-items: center;
+        }
+        button {
+            width: 70px;
+            height: 70px;
+            border-radius: 100%;
+            font-size: large;
+            font-weight: bold;
+            color: white;
+            background-color: #054d6e;
+        }
+        button:hover {
+            background-color: #0a658f;
+        }
+        .topSymbol {
+            background-color: rgb(199, 131, 6);
+        }
+        .topSymbol:hover {
+            background-color: rgb(233, 157, 17);
+        }
+        .sideSymbol {
+            background-color: rgb(102, 21, 184);
+        }
+        .sideSymbol:hover {
+            background-color: rgb(122, 29, 216);
+        }
+        #equal {
+            width: 152px;
+            height: 65px;
+            border-radius: 20px;
+            font-size: large;
+            margin-top: 2px;
+        }
+    </style>
+    <title>Calculator</title>
+</head>
+<body>
+    <main class="main">
+        <div class="calculatorContainer">
+            <div class="screen">
+                <div id="display" class="display"><span>(985 * 3) * 3/21</span></div>
+                <div id="result" class="result"><span>36.465</span></div>
+            </div>
+            <div class="operationsContainer">
+                <div class="buttonsContainer">
+                    <button id="clear" class="topSymbol">C</button>
+                    <button id="hash" class="topSymbol">#</button>
+                    <button id="percent" class="topSymbol">%</button>
+                    <button id="divide" class="sideSymbol">÷</button>
+                </div>
+                <div class="buttonsContainer">
+                    <button id="seven">7</button>
+                    <button id="eight">8</button>
+                    <button id="nine">9</button>
+                    <button id="multiply" class="sideSymbol">x</button>
+                </div>
+                <div class="buttonsContainer">
+                    <button id="four">4</button>
+                    <button id="five">5</button>
+                    <button id="six">6</button>
+                    <button id="add" class="sideSymbol">+</button>
+                </div>
+                <div class="buttonsContainer">
+                    <button id="one">1</button>
+                    <button id="two">2</button>
+                    <button id="three">3</button>
+                    <button id="subtract" class="sideSymbol">-</button>
+                </div>
+                <div class="buttonsContainer">
+                    <button id="point">.</button>
+                    <button id="zero">0</button>
+                    <button id="equal" class="sideSymbol">=</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="/src/calculator.js"></script>
+</body>
+</html>
