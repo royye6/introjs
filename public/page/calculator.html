@@ -9,6 +9,20 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
+        }
+        nav {
+            width: 80%;
+            height: fit-content;
+            text-align: right;
+            font-size: larger; 
+        }
+        a {
+            text-decoration: none;
+            color: whitesmoke;
+        }
+        a:hover {
+            color: #b0cbd8;
         }
         .main {
             display: flex;
@@ -31,17 +45,24 @@
             display: flex;
             flex-direction: column;
             height: 30%;
-            width: 100%;
-            justify-content: end;
-            text-align: right;
+            width: 100%;   
             font-family: 'Times New Roman', Times, serif;
         }
         .display {
+            display: flex;
             padding-right: 17px;
+            height: 50%;
+            align-items: end;
+            padding-left: 22px;
         }
         .result {
-            font-size: 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            font-size: 60px;
             padding-right: 15px;
+            height: 50%;
+            text-align: right;
         }
         .operationsContainer {
             display: flex;
@@ -93,45 +114,48 @@
     <title>Calculator</title>
 </head>
 <body>
-    <main class="main">
+    <nav>
+        <span><a href="/">Home</a></span>
+    </nav>
+    <section class="main">
         <div class="calculatorContainer">
             <div class="screen">
-                <div id="display" class="display"><span>(985 * 3) * 3/21</span></div>
-                <div id="result" class="result"><span>36.465</span></div>
+                <div id="display" class="display"><span id="calcDisplay"></span></div>
+                <div id="result" class="result"><span id="resultDisplay">&nbsp</span></div>
             </div>
             <div class="operationsContainer">
                 <div class="buttonsContainer">
-                    <button id="clear" class="topSymbol">C</button>
-                    <button id="hash" class="topSymbol">#</button>
-                    <button id="percent" class="topSymbol">%</button>
-                    <button id="divide" class="sideSymbol">÷</button>
+                    <button id="clear" class="topSymbol" value="0">C</button>
+                    <button id="hash" class="topSymbol btn" value="#">#</button>
+                    <button id="percent" class="topSymbol btn" value="%">%</button>
+                    <button id="divide" class="sideSymbol btn" value="/">÷</button>
                 </div>
                 <div class="buttonsContainer">
-                    <button id="seven">7</button>
-                    <button id="eight">8</button>
-                    <button id="nine">9</button>
-                    <button id="multiply" class="sideSymbol">x</button>
+                    <button id="seven" class="btn" value="7">7</button>
+                    <button id="eight" class="btn" value="8">8</button>
+                    <button id="nine" class="btn" value="9">9</button>
+                    <button id="multiply" class="sideSymbol btn" value="*">x</button>
                 </div>
                 <div class="buttonsContainer">
-                    <button id="four">4</button>
-                    <button id="five">5</button>
-                    <button id="six">6</button>
-                    <button id="add" class="sideSymbol">+</button>
+                    <button id="four" class="btn" value="4">4</button>
+                    <button id="five" class="btn" value="5">5</button>
+                    <button id="six" class="btn" value="6">6</button>
+                    <button id="add" class="sideSymbol btn" value="+">+</button>
                 </div>
                 <div class="buttonsContainer">
-                    <button id="one">1</button>
-                    <button id="two">2</button>
-                    <button id="three">3</button>
-                    <button id="subtract" class="sideSymbol">-</button>
+                    <button id="one" class="btn" value="1">1</button>
+                    <button id="two" class="btn" value="2">2</button>
+                    <button id="three" class="btn" value="3">3</button>
+                    <button id="subtract" class="sideSymbol btn" value="-">-</button>
                 </div>
                 <div class="buttonsContainer">
-                    <button id="point">.</button>
-                    <button id="zero">0</button>
-                    <button id="equal" class="sideSymbol">=</button>
+                    <button id="point" class="btn" value=".">.</button>
+                    <button id="zero" class="btn" value="0">0</button>
+                    <button id="equal" class="sideSymbol" value="=">=</button>
                 </div>
             </div>
         </div>
-    </main>
-    <script src="/src/calculator.js"></script>
+    </section>
+    <script src="/js/calculator.js"></script>
 </body>
 </html>

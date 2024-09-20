@@ -9,6 +9,20 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
+        }
+        nav {
+            width: 80%;
+            height: fit-content;
+            text-align: right;
+            font-size: larger; 
+        }
+        a {
+            text-decoration: none;
+            color: whitesmoke;
+        }
+        a:hover {
+            color: #b0cbd8;
         }
         .main {
             display: flex;
@@ -18,8 +32,10 @@
             margin-top: 150px;
         }
         #userInput {
-            width: 300px;
+            width: 400px;
+            height: 30px;
             border-radius: 5px;
+            padding-left: 20px;
         }
         #hint {
             color: white;
@@ -27,18 +43,25 @@
         .buttonContainer {
             display: flex;
             justify-content: end;
-            width: 300px;
+            width: 420px;
             margin-top: 10px;
+
+        }
+        button {
+            height: 30px;
         }
     </style>
     <title>Number Guesser</title>
 </head>
 <body>
-    <main class="main">
+    <nav>
+        <span><a href="/">Home</a></span>
+    </nav>
+    <section class="main">
         <p id="hint" class=""></p>
         <input id="userInput" type="text" placeholder="Guess the winning number between 1-100">
         <div class="buttonContainer"><button id="submitButton" type="button">Submit</button></div>
-    </main>
-    <script src="/src/numberGuesser.js"></script>
+    </section>
+    <script src="/js/numberGuesser.js"></script>
 </body>
 </html>

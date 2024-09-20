@@ -1,0 +1,17 @@
+{
+  "name": "introjs",
+  "version": "1.0.0",
+  "description": "IntroJS",
+  "main": "./server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server",
+    "dev": "node --watch server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}

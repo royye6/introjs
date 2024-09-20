@@ -9,6 +9,20 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
+        }
+        nav {
+            width: 80%;
+            height: fit-content;
+            text-align: right;
+            font-size: larger; 
+        }
+        a {
+            text-decoration: none;
+            color: whitesmoke;
+        }
+        a:hover {
+            color: #b0cbd8;
         }
         .main {
             display: flex;
@@ -16,7 +30,7 @@
             align-items: center;
             margin-top: 150px;
         }
-        span {
+        #currentNumber {
             font-size: 40px;
             color: white;
         }
@@ -43,7 +57,10 @@
     <title>Counter</title>
 </head>
 <body>
-    <main class="main">
+    <nav>
+        <span><a href="/">Home</a></span>
+    </nav>
+    <section class="main">
         <div class="container">
             <span id="currentNumber">0</span>
             <div class="buttonContainer">
@@ -52,7 +69,7 @@
                 <button id="incrementButton" type="button">+</button>
             </div>
         </div>
-    </main>
-    <script src="/src/counter.js"></script>
+    </section>
+    <script src="/js/counter.js"></script>
 </body>
 </html>
