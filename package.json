@@ -2,16 +2,22 @@
   "name": "introjs",
   "version": "1.0.0",
   "description": "IntroJS",
-  "main": "./server.js",
+  "main": "./server.mjs",
   "type": "module",
   "scripts": {
-    "start": "node server",
-    "dev": "node --watch server"
+    "dev": "nodemon ./server.mjs",
+    "start": "node ./server.mjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.21.0"
+    "express": "^4.21.0",
+    "express-session": "^1.18.0",
+    "express-validator": "^7.2.0",
+    "pg": "^8.13.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
   }
 }
